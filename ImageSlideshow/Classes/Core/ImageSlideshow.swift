@@ -30,6 +30,7 @@ public enum PageControlPosition {
             return padding
         }
     }
+  
 }
 
 /// Used to represent image preload strategy
@@ -64,6 +65,12 @@ open class ImageSlideshow: UIView {
         didSet {
             setNeedsLayout()
         }
+    }
+  
+    open var pageControlCenterPositionBottomOffset : CGFloat = 0.0 {
+      didSet {
+        setNeedsLayout()
+      }
     }
 
     /// Current page
@@ -216,7 +223,7 @@ open class ImageSlideshow: UIView {
         }
 
         pageControl.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: 10)
-        pageControl.center = CGPoint(x: frame.size.width / 2, y: frame.size.height - 12.0)
+        pageControl.center = CGPoint(x: frame.size.width / 2, y: frame.size.height - 12.0 - pageControlCenterPositionBottomOffset)
     }
 
     /// updates frame of the scroll view and its inner items
