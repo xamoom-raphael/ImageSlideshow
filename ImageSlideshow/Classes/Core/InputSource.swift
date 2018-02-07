@@ -9,7 +9,7 @@
 import UIKit
 
 /// A protocol that can be adapted by different Input Source providers
-@objc public protocol InputSource {
+public protocol InputSource {
     /**
      Load image from the source to image view.
      - parameter imageView: The image view to load the image into.

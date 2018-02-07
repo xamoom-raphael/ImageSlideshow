@@ -355,7 +355,7 @@ open class ImageSlideshow: UIView {
         }
     }
 
-    func slideshowTick(_ timer: Timer) {
+    @objc func slideshowTick(_ timer: Timer) {
         let page = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
         var nextPage = page + 1
 
@@ -436,7 +436,7 @@ open class ImageSlideshow: UIView {
         return fullscreen
     }
 
-    @objc private func pageControlValueChanged() {
+  @objc private func pageControlValueChanged() {
         self.setCurrentPage(pageControl.currentPage, animated: true)
     }
 }
